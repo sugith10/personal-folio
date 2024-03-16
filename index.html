@@ -31,30 +31,31 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
     .image-list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .image-list li {
-        margin: 0 10px;
+      margin: 0 10px;
     }
 
     @keyframes right-kf {
-        0% {
-            transform: translate3d(0, 0, 0);
-        }
-        100% {
-            transform: translate3d(-108rem, 0, 0);
-        }
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(-108rem, 0, 0);
+      }
     }
 
     .move-right {
-        animation: right-kf 25s linear infinite;
+      animation: right-kf 25s linear infinite;
     }
-</style>
+  </style>
 
 </head>
 
@@ -120,27 +121,39 @@
           <h2>I'm <span>Sugith K</span> a Software Craftsman from India </h2>
           <p>Blanditiis praesentium aliquam illum tempore incidunt debitis dolorem magni est deserunt sed qui libero.
             Qui voluptas amet.</p>
-            <div class="container overflow-hidden">
-              <ul class="image-list d-flex justify-content-center">
-                  <li class="m-5"><img src="assets/img/tech/flutter_logo.svg" alt="Image 1"></li>
-                  <li class="m-5"><img src="assets/img/tech/firebase_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/bloc_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/hive_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/sqlite_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/river_pod_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/get_x.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/android_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/kotlin_logo.svg" alt="Image 3"></li>
-                  <li class="m-5"><img src="assets/img/tech/java_logo.svg" alt="Image 2"></li>
-              </ul>
-          </div>
-          
+
 
           <a href="contact.html" class="btn-get-started">Available for hire</a>
         </div>
       </div>
     </div>
   </section><!-- End Hero Section -->
+  <div class="container-fluid overflow-hidden">
+    <ul class="image-list d-flex justify-content-center">
+      <li class="m-5"><img src="assets/img/tech/flutter_logo.svg" alt="Image 1"></li>
+      <li class="m-5"><img src="assets/img/tech/firebase_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/bloc_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/hive_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/sqlite_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/river_pod_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/get_x.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/android_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/kotlin_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/java_logo.svg" alt="Image 2"></li>
+
+      <li class="m-5"><img src="assets/img/tech/flutter_logo.svg" alt="Image 1"></li>
+      <li class="m-5"><img src="assets/img/tech/firebase_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/bloc_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/hive_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/sqlite_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/river_pod_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/get_x.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/android_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/kotlin_logo.svg" alt="Image 3"></li>
+      <li class="m-5"><img src="assets/img/tech/java_logo.svg" alt="Image 2"></li>
+      <!-- Duplicate the images to create a continuous loop -->
+    </ul>
+  </div>
 
   <main id="main" data-aos="fade" data-aos-delay="1500">
 
@@ -347,23 +360,32 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    // Get the list of images
-    const imageList = document.querySelector('.image-list');
+    function startAnimation() {
+        // Get the list of images
+        const imageList = document.querySelector('.image-list');
 
-    // Get the width of one image item
-    const imageWidth = imageList.querySelector('li').offsetWidth;
+        // Get the width of one image item
+        const imageWidth = imageList.querySelector('li').offsetWidth;
 
-    // Clone the first set of images and append them to the end
-    const originalImages = imageList.innerHTML;
-    imageList.innerHTML += originalImages;
+        // Clone the first set of images and append them to the end
+        const originalImages = imageList.innerHTML;
+        imageList.innerHTML += originalImages;
 
-    // Set the width of the image list container to accommodate all images
-    const totalWidth = imageList.querySelectorAll('li').length * imageWidth;
-    imageList.style.width = totalWidth + 'px';
+        // Set the width of the image list container to accommodate all images
+        const totalWidth = imageList.querySelectorAll('li').length * imageWidth;
+        imageList.style.width = totalWidth + 'px';
 
-    // Add the animation class to make the images move
-    imageList.classList.add('move-right');
+        // Add the animation class to make the images move
+        imageList.classList.add('move-right');
+
+        // Call this function again after a delay to create an infinite loop
+        setTimeout(startAnimation, 999999); // 15s delay
+    }
+
+    // Start the animation loop
+    startAnimation();
 </script>
+
 
 </body>
 
